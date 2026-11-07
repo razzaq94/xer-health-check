@@ -1,0 +1,43 @@
+ERMHDR	19.12	2026-03-02	Project	SCHEDULER	Scheduler	dbxDatabaseNoName	Project Management	USD
+%T	PROJECT
+%F	proj_id	proj_short_name	last_recalc_date	plan_start_date
+%R	1	MIDRISE-42	2026-03-02 08:00	2026-01-05 08:00
+%T	CALENDAR
+%F	clndr_id	clndr_name	day_hr_cnt
+%R	1	5-day 8h	8
+%R	2	4x10 framing crew	10
+%T	PROJWBS
+%F	wbs_id	proj_id	wbs_short_name	wbs_name
+%R	10	1	MIDRISE-42	42-unit midrise
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	task_code	task_name	task_type	status_code	target_drtn_hr_cnt	remain_drtn_hr_cnt	total_float_hr_cnt	act_start_date	act_end_date	early_start_date	early_end_date	cstr_type	cstr_date
+%R	1001	1	10	1	A1000	Notice to proceed	TT_Mile	TK_Complete	0	0	0	2026-01-05 08:00	2026-01-05 08:00				
+%R	1002	1	10	1	A1010	Mobilization	TT_Task	TK_Complete	80	0	0	2026-01-05 08:00	2026-01-16 17:00				
+%R	1003	1	10	1	A1020	Excavation and shoring	TT_Task	TK_Active	160	40	0	2026-01-19 08:00		2026-03-02 08:00	2026-03-06 17:00		
+%R	1004	1	10	1	A1030	Foundations	TT_Task	TK_NotStart	240	240	0			2026-03-09 08:00	2026-04-08 17:00		
+%R	1005	1	10	1	A1040	Underground utilities	TT_Task	TK_NotStart	120	120	400			2026-03-04 08:00	2026-03-20 17:00		
+%R	1006	1	10	1	A1050	Structural steel	TT_Task	TK_NotStart	400	400	0			2026-04-10 08:00	2026-06-05 17:00	CS_MSO	2026-04-10 08:00
+%R	1007	1	10	2	A1060	Framing	TT_Task	TK_NotStart	300	300	-20			2026-06-03 08:00	2026-07-14 17:00		
+%R	1008	1	10	1	A1070	Roofing	TT_Task	TK_NotStart	80	80	16			2026-07-15 08:00	2026-07-24 17:00		
+%R	1009	1	10	1	A1080	MEP rough-in	TT_Task	TK_NotStart	240	240	40			2026-06-03 08:00	2026-07-14 17:00	CS_MSOA	2026-06-01 08:00
+%R	1010	1	10	1	A1090	Drywall	TT_Task	TK_NotStart	160	160	0			2026-07-15 08:00	2026-08-11 17:00		
+%R	1011	1	10	1	A1100	Switchgear procurement	TT_Task	TK_NotStart	480	480	600			2026-03-02 08:00	2026-05-25 17:00		
+%R	1012	1	10	1	A1110	Interior finishes	TT_Task	TK_NotStart	200	200	0			2026-02-20 08:00	2026-08-21 17:00		
+%R	1013	1	10	1	A1120	Project management	TT_LOE	TK_NotStart	0	0	0						
+%R	1014	1	10	1	A1130	Substantial completion	TT_FinMile	TK_NotStart	0	0	0			2026-08-21 17:00	2026-08-21 17:00	CS_MEOB	2026-08-28 17:00
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt
+%R	1	1002	1001	1	1	PR_FS	0
+%R	2	1003	1002	1	1	PR_FS	0
+%R	3	1004	1003	1	1	PR_FS	0
+%R	4	1005	1003	1	1	PR_SS	40
+%R	5	1006	1004	1	1	PR_FS	0
+%R	6	1007	1006	1	1	PR_FS	-16
+%R	7	1008	1007	1	1	PR_FS	0
+%R	8	1009	1007	1	1	PR_SS	0
+%R	9	1010	1009	1	1	PR_FS	0
+%R	10	1012	1008	1	1	PR_FS	0
+%R	11	1014	1012	1	1	PR_FS	0
+%R	12	1014	1011	1	1	PR_FS	0
+%R	13	1012	1005	1	1	PR_FS	0
+%E

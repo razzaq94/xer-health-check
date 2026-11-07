@@ -1,0 +1,24 @@
+{
+  "name": "xer-health-check",
+  "version": "0.1.0",
+  "description": "Parse Primavera P6 XER exports, load them into Postgres and run DCMA-style schedule checks.",
+  "type": "module",
+  "scripts": {
+    "check": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
